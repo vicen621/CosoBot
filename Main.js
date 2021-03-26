@@ -21,7 +21,7 @@ client.once('ready', () => {
 
 client.on('message', message => {
 
-    if (message === '@' + client.name){
+    if (message.isMemberMentioned(client.user)){
         message.reply('My prefix is c!');
     }
 
