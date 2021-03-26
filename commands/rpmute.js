@@ -20,8 +20,8 @@ module.exports = {
             let memberTarget = message.guild.members.cache.get(target.id);
             let canal = message.channel;
 
-            if (memberTarget.roles.highest.position > message.member.roles.highest.position || memberTarget.roles.highest.position > message.member.guild.me.roles.highest.position) {
-                message.channel.send('No puedo mutear a ese miembro porque su rango es mayor que el mio!');
+            if (target.id === message.author.id){
+                message.channel.send('No podes desmutearte a vos mismo!');
                 return;
             }
 

@@ -18,7 +18,7 @@ module.exports = {
             let memberTarget = message.guild.members.cache.get(target.id);
             let canal = message.channel;
 
-            if (memberTarget === message.author){
+            if (target.id === message.author.id){
                 message.channel.send('No podes desmutearte a vos mismo!');
                 return;
             }

@@ -20,8 +20,8 @@ module.exports = {
                 return;
             }
 
-            if (memberTarget === message.author){
-                message.channel.send('No podes mutearte a vos mismo!');
+            if (target.id === message.author.id){
+                message.channel.send('No podes desmutearte a vos mismo!');
                 return;
             }
 
