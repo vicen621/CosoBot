@@ -13,6 +13,11 @@ module.exports = {
             let mutedRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted');
             let memberTarget = message.guild.members.cache.get(target.id);
 
+            if (memberTarget === message.author){
+                message.channel.send('No podes desmutearte a vos mismo!');
+                return;
+            }
+
             if (!memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muted')){
                 message.channel.send("Ese miembro no esta muteado!");
                 return;

@@ -20,6 +20,11 @@ module.exports = {
                 return;
             }
 
+            if (memberTarget === message.author){
+                message.channel.send('No podes mutearte a vos mismo!');
+                return;
+            }
+
             if (memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muted')){
                 message.channel.send("Ese miembro ya esta muteado!");
                 return;
