@@ -2,6 +2,9 @@ module.exports = {
     name: 'togglealert',
     description: 'toggles the alert for the UHC!',
     execute(message, args){
+
+        if (message.channel.name !== "togglealert") return;
+
         let xoxix = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'xoxix');
         let xoxixSM = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'xoxix-wm');
         let author = message.member;

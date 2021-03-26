@@ -20,7 +20,12 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-    if(!message.content.startsWith(prefix) || message.author.bot || message.channel.name !== "togglealert") return;
+
+    if (message === '@' + client.name){
+        message.reply('My prefix is c!');
+    }
+
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
