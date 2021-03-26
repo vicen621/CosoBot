@@ -21,10 +21,6 @@ client.once('ready', () => {
 
 client.on('message', message => {
 
-    if (message.isMemberMentioned(client.user)){
-        message.reply('My prefix is c!');
-    }
-
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
