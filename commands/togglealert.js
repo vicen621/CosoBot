@@ -2,8 +2,8 @@ module.exports = {
     name: 'togglealert',
     description: 'toggles the alert for the UHC!',
     execute(message, args){
-        let xoxix = message.guild.roles.cache.find(role => role.name === 'xoxix');
-        let xoxixSM = message.guild.roles.cache.find(role => role.name === 'xoxix-WM');
+        let xoxix = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'xoxix');
+        let xoxixSM = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'xoxix-wm');
         let author = message.member;
 
         if (message.member.roles.cache.some(role => role.name === 'xoxix')){
