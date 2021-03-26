@@ -38,6 +38,8 @@ client.on('message', message => {
         client.commands.get('rpmute').execute(message,args);
     } else if (command === 'rpunmute'){
         client.commands.get('rpunmute').execute(message);
+    } else if (command === 'hola'){
+        client.commands.get('hola').execute(message);
     }
 })
 
