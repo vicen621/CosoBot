@@ -21,7 +21,7 @@ module.exports = {
             }
 
             if (target.id === message.author.id){
-                message.channel.send('No podes desmutearte a vos mismo!');
+                message.channel.send('No podes mutearte a vos mismo!');
                 return;
             }
 
