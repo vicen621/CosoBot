@@ -10,14 +10,14 @@ module.exports = {
         let author = message.member;
 
         if (message.member.roles.cache.some(role => role.name === 'xoxix')){
-            message.guild.members.cache.get(author.id).roles.remove(xoxix)
+            message.member.roles.remove(xoxix);
             message.reply('Ya no recibiras notificaciones de UHC!');
-            message.guild.members.cache.get(author.id).roles.add(xoxixSM)
+            message.member.roles.add(xoxixSM);
             return;
         }else{
             message.guild.members.cache.get(author.id).roles.add(xoxix)
             message.reply('Ahora recibiras notificaciones de UHC!');
-            message.guild.members.cache.get(author.id).roles.remove(xoxixSM)
+            message.member.roles.remove(xoxixSM);
             return;
         }
     }
