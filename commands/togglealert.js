@@ -1,7 +1,7 @@
 module.exports = {
     name: 'togglealert',
     description: 'toggles the alert for the UHC!',
-    execute(message, args){
+    execute(message) {
 
         if (message.channel.name !== "togglealert") return;
 
@@ -9,15 +9,15 @@ module.exports = {
         let xoxixSM = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'xoxix-wm');
         let author = message.member;
 
-        if (message.member.roles.cache.some(role => role.name === 'xoxix')){
-            message.member.roles.remove(xoxix);
+        if (author.roles.cache.some(role => role.name === 'xoxix')) {
+            author.roles.remove(xoxix).catch(console.error);
             message.reply('Ya no recibiras notificaciones de UHC!');
-            message.member.roles.add(xoxixSM);
+            author.roles.add(xoxixSM).catch(console.error);
             return;
-        }else{
-            message.guild.members.cache.get(author.id).roles.add(xoxix)
+        } else {
+            author.roles.add(xoxix).catch(console.error);
             message.reply('Ahora recibiras notificaciones de UHC!');
-            message.member.roles.remove(xoxixSM);
+            author.roles.remove(xoxixSM).catch(console.error);
             return;
         }
     }
