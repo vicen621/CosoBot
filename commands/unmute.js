@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (target){
-            let mutedRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted');
+            let mutedRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muteado');
             let memberTarget = message.guild.members.cache.get(target.id);
 
             if (target.id === message.author.id){
@@ -18,7 +18,7 @@ module.exports = {
                 return;
             }
 
-            if (!memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muted')){
+            if (!memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muteado')){
                 message.channel.send("Ese miembro no esta muteado!");
                 return;
             }

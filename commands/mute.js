@@ -12,7 +12,7 @@ module.exports = {
         }
 
         if (target){
-            let mutedRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted');
+            let mutedRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muteado');
             let memberTarget = message.guild.members.cache.get(target.id);
 
             if (memberTarget.roles.highest.position > message.member.roles.highest.position || memberTarget.roles.highest.position > message.member.guild.me.roles.highest.position){
@@ -25,7 +25,7 @@ module.exports = {
                 return;
             }
 
-            if (memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muted')){
+            if (memberTarget.roles.cache.some(r => r.name.toLowerCase() === 'muteado')){
                 message.channel.send("Ese miembro ya esta muteado!");
                 return;
             }
