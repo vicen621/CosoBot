@@ -41,7 +41,9 @@ client.on('message', message => {
         client.commands.get('rpunmute').execute(message);
     } else if (command === 'hola'){
         client.commands.get('hola').execute(message);
+    } else if (command === 'slowmode'){
+        client.commands.get('slowmode').execute(message, args);
     }
 })
 
-client.login(process.env.TOKEN);
+client.login();
