@@ -17,8 +17,6 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('CosoBot is online!');
-    console.log('Status: ' + client.user.presence.status);
-    client.user.setStatus('dnd');
     client.user.setActivity('CosoUHC.club', { type: 'PLAYING' })
 })
 
